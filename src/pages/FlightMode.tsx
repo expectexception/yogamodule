@@ -45,7 +45,7 @@ const FlightMode = () => {
                                     <div className="space-y-1">
                                         <div className="flex items-center gap-3">
                                             <h4 className="text-lg font-black text-slate-100 uppercase tracking-tight">{item.type}</h4>
-                                            <span className={`text-[8px] font-black px-1.5 py-0.5 rounded-full border ${selectedType === item.type ? 'border-slate-500/30 text-slate-300' : 'border-slate-700 text-slate-600'} uppercase`}>
+                                            <span className={`text-[8px] font-black px-1.5 py-0.5 rounded-full border ${selectedType === item.type ? 'border-slate-500/30 text-slate-300' : 'border-slate-600 text-slate-400'} uppercase`}>
                                                 {item.meta}
                                             </span>
                                         </div>

@@ -113,7 +113,7 @@ const Scale = () => {
                         </Card>
                     </div>
 
-                    <Button size="lg" className="w-full h-20 text-xl font-black uppercase tracking-widest gap-3 shadow-2xl bg-white text-slate-950 hover:bg-slate-100 border-none group" onClick={handleFinish}>
+                    <Button size="lg" className="w-full h-20 text-xl font-black uppercase tracking-widest gap-3 shadow-2xl bg-white text-slate-950 hover:bg-slate-100 border-none group relative z-20" onClick={handleFinish}>
                         Launch Dashboard <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </Button>
 

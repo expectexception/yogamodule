@@ -3,15 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/ui/Button';
 import { User, Mail, Lock, ShieldCheck } from 'lucide-react';
 import { YogaLogo } from '../components/ui/YogaLogo';
+import { useAppState } from '../context/AppState';
 
 const Register = () => {
     const navigate = useNavigate();
+    const { login } = useAppState();
     const [loading, setLoading] = useState(false);
 
     const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setTimeout(() => {
+            login(); // Set authenticated state
             navigate('/profile-setup');
         }, 1500);
     };

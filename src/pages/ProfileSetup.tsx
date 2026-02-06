@@ -31,7 +31,7 @@ const ProfileSetup = () => {
                         <div className="w-1.5 h-1.5 rounded-full bg-slate-400 animate-pulse" />
                         Step 01: Profile Initialization
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black italic tracking-tighter uppercase leading-none">Profile Details</h2>
+                    <h2 className="text-2xl md:text-3xl font-black italic tracking-tighter uppercase leading-none">Profile Details</h2>
                     <p className="text-slate-500 font-medium italic">Configure your physical parameters for protocol tailoring.</p>
                 </div>
                 <div className="hidden md:flex items-center gap-2 text-slate-700">
@@ -101,13 +101,13 @@ const ProfileSetup = () => {
                                     <div className="relative">
                                         <input
                                             type="number"
-                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl px-6 text-white text-2xl font-black italic tracking-tighter focus:outline-none focus:border-slate-500/30 transition-all px-12"
+                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl pl-20 pr-6 text-white text-2xl font-black italic tracking-tighter focus:outline-none focus:border-slate-500/30 transition-all"
                                             placeholder="175"
                                             value={formData.height}
                                             onChange={(e) => setFormData({ ...formData, height: e.target.value })}
                                             required
                                         />
-                                        <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-700 font-black italic">CM</span>
+                                        <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-700 font-black italic text-sm">CM</span>
                                     </div>
                                 </div>
                                 <div className="space-y-4">
@@ -117,20 +117,20 @@ const ProfileSetup = () => {
                                     <div className="relative">
                                         <input
                                             type="number"
-                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl px-6 text-white text-2xl font-black italic tracking-tighter focus:outline-none focus:border-slate-500/30 transition-all px-12"
+                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl pl-20 pr-6 text-white text-2xl font-black italic tracking-tighter focus:outline-none focus:border-slate-500/30 transition-all"
                                             placeholder="70"
                                             value={formData.weight}
                                             onChange={(e) => setFormData({ ...formData, weight: e.target.value })}
                                             required
                                         />
-                                        <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-700 font-black italic">KG</span>
+                                        <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-700 font-black italic text-sm">KG</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </Card>
 
-                    <Button type="submit" size="lg" className="w-full h-20 text-xl font-black uppercase tracking-widest shadow-2xl bg-slate-100 text-slate-950 hover:bg-white border-none group">
+                    <Button type="submit" size="lg" className="w-full h-20 text-lg font-black uppercase tracking-widest shadow-2xl bg-slate-100 text-slate-950 hover:bg-white border-none group">
                         Initialize Core Metrics <ChevronRight className="w-6 h-6 group-hover:translate-x-2 transition-transform ml-2" />
                     </Button>
                 </div>

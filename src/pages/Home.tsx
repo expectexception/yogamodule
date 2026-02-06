@@ -12,7 +12,7 @@ const Home = () => {
         <div className="min-h-[80vh] flex flex-col justify-center max-w-6xl mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
                 {/* Hero Content */}
-                <div className="space-y-8 text-center lg:text-left order-2 lg:order-1">
+                <div className="space-y-8 text-center lg:text-left">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -53,7 +53,7 @@ const Home = () => {
                 </div>
 
                 {/* Hero Visual Cards */}
-                <div className="order-1 lg:order-2 grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}

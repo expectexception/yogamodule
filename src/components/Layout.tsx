@@ -16,21 +16,23 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="min-h-screen bg-slate-950 text-slate-50 flex flex-col items-center">
             {/* Header - Stays fixed/sticky at the top */}
-            <header className="w-full px-6 h-20 flex items-center justify-center sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
+            <header className="w-full px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-center sticky top-0 z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/5">
                 <div className="w-full max-w-7xl flex items-center justify-between relative">
                     <div className="flex items-center gap-4">
-                        {showBack && (
+                        {/* Fixed Width Back Button Slot to prevent Logo shift */}
+                        <div className="w-10 h-10 mr-2 flex items-center justify-center">
                             <button
                                 onClick={() => navigate(-1)}
-                                className="w-10 h-10 flex cursor-pointer items-center justify-center bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-all mr-2"
+                                className={`w-10 h-10 flex items-center justify-center bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl transition-all duration-300 ${showBack ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2 pointer-events-none'
+                                    }`}
                                 aria-label="Go back"
                             >
                                 <ChevronLeft className="w-5 h-5 text-slate-400" />
                             </button>
-                        )}
+                        </div>
                         <Link to="/yoga-dashboard" className="flex items-center gap-3">
-                            <YogaLogo className="w-10 h-10 text-slate-400" />
-                            <h1 className="text-xl font-black italic text-slate-200 tracking-tighter uppercase hidden sm:block">
+                            <YogaLogo className="w-15 h-15 text-slate-400" />
+                            <h1 className="text-lg sm:text-xl font-black italic text-slate-200 tracking-tighter uppercase">
                                 IFOA YOGA
                             </h1>
                         </Link>

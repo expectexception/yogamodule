@@ -6,8 +6,8 @@ import { motion } from 'framer-motion';
 
 const Leaderboard = () => {
     const leaderData = [
-        { rank: 1, name: 'Capt. Sarah Miller', score: '4,850', tier: 'Gold', current: false, trend: 1, hub: 'LHR' },
-        { rank: 2, name: 'Eng. David Chen', score: '4,620', tier: 'Gold', current: false, trend: -1, hub: 'HKG' },
+        { rank: 1, name: 'Capt. Rajat', score: '4,850', tier: 'Gold', current: false, trend: 1, hub: 'LHR' },
+        { rank: 2, name: 'Capt. Yash', score: '4,620', tier: 'Gold', current: false, trend: -1, hub: 'HKG' },
         { rank: 3, name: 'Capt. Alex Hunt', score: '4,200', tier: 'Silver', current: true, trend: 0, hub: 'DXB' },
         { rank: 4, name: 'Crew Elena R.', score: '3,950', tier: 'Silver', current: false, trend: 1, hub: 'SIN' },
         { rank: 5, name: 'FO Michael Song', score: '3,800', tier: 'Silver', current: false, trend: -1, hub: 'JFK' },

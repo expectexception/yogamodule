@@ -44,27 +44,55 @@ const AIPoseCorrection = () => {
     const startCamera = async () => {
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
             setStatus('error');
-            setFeedback('Camera API not available in this browser.');
+            setFeedback('Camera API unavailable. Use HTTPS or localhost.');
             return;
         }
 
+        const tryGetStream = async (constraints: MediaStreamConstraints) => {
+            try {
+                return await navigator.mediaDevices.getUserMedia(constraints);
+            } catch (e) {
+                return null;
+            }
+        };
+
         try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-                video: { width: 640, height: 480, facingMode: 'user' }
+            // 1. Try ideal mobile constraints (user facing, 480p)
+            let stream = await tryGetStream({
+                video: { facingMode: 'user', width: { ideal: 640 }, height: { ideal: 480 } }
             });
+
+            // 2. Fallback: Any camera, any resolution
+            if (!stream) {
+                console.warn('Ideal camera constraints failed, trying fallback...');
+                stream = await tryGetStream({ video: true });
+            }
+
+            if (!stream) {
+                throw new Error('Could not access any camera');
+            }
 
             if (videoRef.current) {
                 videoRef.current.srcObject = stream;
+                // Add playsinline attribute enforcement for iOS
+                videoRef.current.setAttribute('playsinline', 'true');
+
                 videoRef.current.onloadedmetadata = () => {
-                    videoRef.current?.play();
+                    videoRef.current?.play().catch(e => console.error("Play error:", e));
                     setFeedback('Align your body in frame');
                     detectPose();
                 };
             }
-        } catch (err) {
+        } catch (err: any) {
             console.error('Camera Error:', err);
             setStatus('error');
-            setFeedback('Camera permission denied.');
+            if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+                setFeedback('Camera permission denied.');
+            } else if (window.isSecureContext === false) {
+                setFeedback('Camera requires HTTPS security.');
+            } else {
+                setFeedback('Camera initialization failed.');
+            }
         }
     };
 

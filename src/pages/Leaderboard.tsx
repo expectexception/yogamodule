@@ -46,18 +46,18 @@ const Leaderboard = () => {
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <Card className="p-4 flex flex-col items-center text-center gap-3 relative overflow-hidden group transition-all duration-500 hover:rotate-2 hover:scale-[1.05]" hover={false}>
-                                    <div className={`w-20 h-20 rounded-full p-1 bg-gradient-to-tr ${p.bg} shadow-2xl`}>
+                                <Card className="p-3 md:p-4 flex flex-col items-center text-center gap-2 md:gap-3 relative overflow-hidden group transition-all duration-500 hover:rotate-2 hover:scale-[1.05]" hover={false}>
+                                    <div className={`w-14 h-14 md:w-20 md:h-20 rounded-full p-1 bg-gradient-to-tr ${p.bg} shadow-2xl`}>
                                         <div className="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
-                                            <UserCircle className="w-12 h-12 text-slate-500" />
+                                            <UserCircle className="w-8 h-8 md:w-12 md:h-12 text-slate-500" />
                                         </div>
                                     </div>
-                                    <div className={`font-black text-3xl italic ${p.color}`}>#{p.rank}</div>
-                                    <div className="space-y-1">
-                                        <div className="text-sm font-black text-white uppercase tracking-tight">{p.name}</div>
-                                        <div className="text-xs font-black text-slate-500">{p.score} XP</div>
+                                    <div className={`font-black text-xl md:text-3xl italic ${p.color}`}>#{p.rank}</div>
+                                    <div className="space-y-0.5 md:space-y-1">
+                                        <div className="text-xs md:text-sm font-black text-white uppercase tracking-tight">{p.name}</div>
+                                        <div className="text-[10px] md:text-xs font-black text-slate-500">{p.score} XP</div>
                                     </div>
-                                    <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-br ${p.bg} opacity-10 blur-xl group-hover:opacity-30 transition-opacity`} />
+                                    <div className={`absolute top-0 right-0 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br ${p.bg} opacity-10 blur-xl group-hover:opacity-30 transition-opacity`} />
                                 </Card>
                             </motion.div>
                         ))}
@@ -82,43 +82,43 @@ const Leaderboard = () => {
                                 transition={{ delay: i * 0.1 }}
                             >
                                 <Card
-                                    className={`px-8 py-5 flex items-center justify-between gap-6 transition-all duration-300 ${user.current ? 'bg-emerald-500/10 border-emerald-500/40 shadow-2xl shadow-emerald-500/5' : 'bg-slate-900/40 border-white/5 opacity-80 hover:opacity-100 hover:bg-slate-900'
+                                    className={`px-4 py-3 md:px-8 md:py-5 flex items-center justify-between gap-3 md:gap-6 transition-all duration-300 ${user.current ? 'bg-emerald-500/10 border-emerald-500/40 shadow-2xl shadow-emerald-500/5' : 'bg-slate-900/40 border-white/5 opacity-80 hover:opacity-100 hover:bg-slate-900'
                                         }`}
                                     hover={!user.current}
                                 >
-                                    <div className="flex items-center gap-8 flex-1">
-                                        <div className={`text-2xl font-black italic w-8 text-center ${user.rank <= 3 ? 'text-amber-500' : 'text-slate-600'}`}>
+                                    <div className="flex items-center gap-3 md:gap-8 flex-1">
+                                        <div className={`text-lg md:text-2xl font-black italic w-6 md:w-8 text-center ${user.rank <= 3 ? 'text-amber-500' : 'text-slate-600'}`}>
                                             {user.rank}
                                         </div>
-                                        <div className="w-12 h-12 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-white/5 relative group-hover:scale-110 transition-transform">
-                                            <UserCircle className="w-7 h-7 text-slate-500" />
-                                            {user.rank <= 3 && <Medal className="w-4 h-4 absolute -top-1 -right-1 text-amber-400 fill-amber-400" />}
+                                        <div className="w-10 h-10 md:w-12 md:h-12 bg-slate-800 rounded-2xl flex items-center justify-center shrink-0 border border-white/5 relative group-hover:scale-110 transition-transform">
+                                            <UserCircle className="w-6 h-6 md:w-7 md:h-7 text-slate-500" />
+                                            {user.rank <= 3 && <Medal className="w-3 h-3 md:w-4 md:h-4 absolute -top-1 -right-1 text-amber-400 fill-amber-400" />}
                                         </div>
-                                        <div className="space-y-1">
-                                            <div className="flex items-center gap-3">
-                                                <h4 className={`text-base font-black italic uppercase tracking-tight ${user.current ? 'text-emerald-400' : 'text-slate-100'}`}>
+                                        <div className="space-y-0.5 md:space-y-1">
+                                            <div className="flex items-center gap-2 md:gap-3">
+                                                <h4 className={`text-sm md:text-base font-black italic uppercase tracking-tight ${user.current ? 'text-emerald-400' : 'text-slate-100'}`}>
                                                     {user.name}
                                                 </h4>
                                                 {user.current && (
-                                                    <span className="text-[10px] bg-emerald-500 text-slate-950 px-2 py-0.5 rounded-full font-black uppercase tracking-widest">You</span>
+                                                    <span className="text-[9px] md:text-[10px] bg-emerald-500 text-slate-950 px-1.5 md:px-2 py-0.5 rounded-full font-black uppercase tracking-widest">You</span>
                                                 )}
                                             </div>
-                                            <div className="flex items-center gap-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                                                <span>Hub: {user.hub}</span>
-                                                <span className="w-1 h-1 rounded-full bg-slate-700" />
-                                                <span>Tier: {user.tier}</span>
+                                            <div className="flex items-center gap-2 md:gap-4 text-[9px] md:text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+                                                <span>{user.hub}</span>
+                                                <span className="w-0.5 h-0.5 md:w-1 md:h-1 rounded-full bg-slate-700" />
+                                                <span>{user.tier}</span>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div className="text-right space-y-1">
-                                        <div className="flex items-center justify-end gap-2">
-                                            <Zap className="w-4 h-4 text-emerald-500" />
-                                            <div className="text-xl font-black text-white italic">{user.score}<span className="text-[8px] text-slate-500 ml-1 uppercase">XP</span></div>
+                                    <div className="text-right space-y-0.5 md:space-y-1">
+                                        <div className="flex items-center justify-end gap-1.5 md:gap-2">
+                                            <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 text-emerald-500" />
+                                            <div className="text-sm md:text-xl font-black text-white italic">{user.score}<span className="text-[7px] md:text-[8px] text-slate-500 ml-0.5 md:ml-1 uppercase">XP</span></div>
                                         </div>
                                         {user.trend !== 0 && (
-                                            <div className={`text-[10px] font-black ${user.trend > 0 ? 'text-emerald-500' : 'text-rose-500'} flex items-center justify-end gap-1 uppercase`}>
-                                                <ArrowUp className={`w-3 h-3 ${user.trend < 0 ? 'rotate-180' : ''}`} />
+                                            <div className={`text-[9px] md:text-[10px] font-black ${user.trend > 0 ? 'text-emerald-500' : 'text-rose-500'} flex items-center justify-end gap-1 uppercase`}>
+                                                <ArrowUp className={`w-2.5 h-2.5 md:w-3 md:h-3 ${user.trend < 0 ? 'rotate-180' : ''}`} />
                                                 {user.trend > 0 ? 'Rising' : 'Falling'}
                                             </div>
                                         )}
@@ -128,12 +128,12 @@ const Leaderboard = () => {
                         ))}
                     </div>
 
-                    <div className="grid grid-cols-2 gap-4 pt-4">
-                        <Button variant="outline" className="h-16 gap-3 border-white/5 bg-slate-900/40 text-slate-400 hover:bg-slate-900 font-black uppercase tracking-[0.2em]">
-                            <Globe className="w-5 h-5" /> View Fleet Avg
+                    <div className="grid grid-cols-2 gap-3 md:gap-4 pt-4">
+                        <Button variant="outline" className="h-12 md:h-16 gap-2 md:gap-3 border-white/5 bg-slate-900/40 text-[10px] md:text-xs text-slate-400 hover:bg-slate-900 font-black uppercase tracking-[0.15em] md:tracking-[0.2em]">
+                            <Globe className="w-4 h-4 md:w-5 md:h-5" /> View Fleet Avg
                         </Button>
-                        <Button className="h-16 gap-3 bg-emerald-600 hover:bg-emerald-700 shadow-2xl shadow-emerald-600/20 text-white font-black uppercase tracking-[0.2em] border-none">
-                            <Users className="w-5 h-5" /> Hub Challenges
+                        <Button className="h-12 md:h-16 gap-2 md:gap-3 bg-emerald-600 hover:bg-emerald-700 shadow-2xl shadow-emerald-600/20 text-white text-[10px] md:text-xs font-black uppercase tracking-[0.15em] md:tracking-[0.2em] border-none">
+                            <Users className="w-4 h-4 md:w-5 md:h-5" /> Hub Challenges
                         </Button>
                     </div>
                 </div>

@@ -83,6 +83,30 @@ const Register = () => {
                                         />
                                     </div>
                                 </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Mobile Number</label>
+                                    <div className="relative group">
+                                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 group-focus-within:text-slate-300 transition-colors" />
+                                        <input
+                                            type="number"
+                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl pl-12 pr-4 text-white focus:outline-none focus:border-slate-500/30"
+                                            placeholder="+91 9876543210"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Language</label>
+                                    <div className="relative group">
+                                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-600 group-focus-within:text-slate-300 transition-colors" />
+                                        <input
+                                            type="text"
+                                            className="w-full h-14 bg-slate-950/50 border border-white/10 rounded-2xl pl-12 pr-4 text-white focus:outline-none focus:border-slate-500/30"
+                                            placeholder="English"
+                                            required
+                                        />
+                                    </div>
+                                </div>
                             </div>
                             <div className="space-y-2">
                                 <label className="text-[10px] font-black text-slate-500 uppercase tracking-widest px-1">Create Access Token</label>

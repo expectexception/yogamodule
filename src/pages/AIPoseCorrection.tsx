@@ -246,7 +246,7 @@ const AIPoseCorrection = () => {
             {/* Header Section */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 px-4 md:px-0">
                 <div className="space-y-1 md:space-y-2">
-                    <h2 className="text-2xl md:text-5xl font-black italic tracking-tighter uppercase">AI Pose Correction</h2>
+                    <h2 className="text-2xl md:text-5xl font-black italic tracking-tighter uppercase">AI - Coach</h2>
                     <p className="text-sm md:text-base text-slate-400 font-medium">Precision form analysis for crew-specific routines</p>
                 </div>
                 <div className="flex gap-3">

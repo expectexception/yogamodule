@@ -3,7 +3,8 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { LogOut, Home, User, Trophy, BarChart3, ChevronLeft } from 'lucide-react';
 import { useAppState } from '../context/AppState';
 import { Button } from './ui/Button';
-import { YogaLogo } from './ui/YogaLogo';
+// import { YogaLogo } from './ui/YogaLogo';
+import Logo from './ui/ifoa.png';
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
     const { pathname } = useLocation();
@@ -30,10 +31,11 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
                                 <ChevronLeft className="w-5 h-5 text-slate-400" />
                             </button>
                         </div>
-                        <Link to="/yoga-dashboard" className="flex items-center gap-3">
-                            <YogaLogo className="w-15 h-15 text-slate-400" />
-                            <h1 className="text-lg sm:text-xl font-black italic text-slate-200 tracking-tighter uppercase">
-                                IFOA YOGA
+                        <Link to="/yoga-dashboard" className="flex items-center gap-2 sm:gap-4 group">
+                            <img src={Logo} alt="Logo" className="w-24 sm:w-32 h-auto object-contain transition-transform group-hover:scale-105 duration-300" />
+                            <div className="h-6 w-[1px] bg-white/10 hidden sm:block mx-1" />
+                            <h1 className="text-sm sm:text-xl font-extrabold text-white tracking-[0.05em] uppercase whitespace-nowrap">
+                                YOGA MODULE
                             </h1>
                         </Link>
                     </div>

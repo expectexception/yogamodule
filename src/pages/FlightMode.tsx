@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 
 const FlightMode = () => {
     const navigate = useNavigate();
-    const [selectedType, setSelectedType] = useState('Short Haul');
+    const [selectedType, setSelectedType] = useState('Pre-Flight');
     const [duration, setDuration] = useState('2');
 
     const flightTypes = [
-        { type: 'Short Haul', icon: Wind, desc: 'Under 3 hours journey', intensity: 'Gentle', meta: 'Quick Reset' },
-        { type: 'Long Haul', icon: Plane, desc: '6+ hours journey', intensity: 'Dynamic', meta: 'Circulation Focus' },
-        { type: 'Night Shift', icon: Clock, desc: 'Restorative focus', intensity: 'Low', meta: 'Cortisol Control' },
+        { type: 'Pre-Flight', icon: Wind, desc: 'Activation and readiness protocols', intensity: 'Dynamic', meta: 'Active Module' },
+        { type: 'Cruise Flight', icon: Plane, desc: 'Maintenance and mid-duty boost', intensity: 'Gentle', meta: 'Booster Module' },
+        { type: 'Post-Flight', icon: Clock, desc: 'Restoration and physiological recovery', intensity: 'Low', meta: 'Refresher Module' },
     ];
 
     return (

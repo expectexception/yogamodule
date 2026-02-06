@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Card } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
-import { Activity, Zap, Play, MousePointer2, Target } from 'lucide-react';
+import { Activity, Play, MousePointer2, Target } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BODY_MAP_DATA, type BodyPart } from '../constants/BodyMapProtocols';
 
